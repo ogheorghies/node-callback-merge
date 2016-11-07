@@ -1,0 +1,29 @@
+{
+  "name": "callback-merge",
+  "version": "1.0.0",
+  "description": "Merges a series of callbacks (e.g. in quick succession) into rarer callbacks (taking an array of arguments).",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogheorghies/node-callback-merge.git"
+  },
+  "keywords": [
+    "callback",
+    "merge",
+    "await"
+  ],
+  "author": "Ovidiu Gheorghies",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ogheorghies/node-callback-merge/issues"
+  },
+  "homepage": "https://github.com/ogheorghies/node-callback-merge#readme",
+  "devDependencies": {
+    "bluebird": "^3.4.6",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
