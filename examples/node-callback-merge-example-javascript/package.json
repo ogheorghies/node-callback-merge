@@ -1,0 +1,14 @@
+{
+  "name": "node-callback-merge-example-javascript",
+  "version": "1.0.0",
+  "description": "Example use of callback-merge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "callback-merge": "1.0.0"
+  }
+}

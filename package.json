@@ -2,7 +2,8 @@
   "name": "callback-merge",
   "version": "1.0.0",
   "description": "Merges a series of callbacks (e.g. in quick succession) into rarer callbacks (taking an array of arguments).",
-  "main": "index.js",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "mocha test/*test.js"
   },
