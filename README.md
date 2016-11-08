@@ -8,3 +8,5 @@ Merges a series of callbacks (e.g. in quick succession) into rarer callbacks (ta
             }
         });
 ```
+
+Working example projects are available in the `examples` directory.
