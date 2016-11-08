@@ -4,7 +4,8 @@ Merges a series of callbacks (e.g. in quick succession) into rarer callbacks (ta
 var ms = new CallbackMerger({
     voter: VoterByDelay.of(50),
     merger: (args: any[][]) => {
-        console.log("After a silence of 50ms, merged", args.length, "callbacks.");
+        console.log("After a silence of 50ms,"
+            "merged", args.length, "callbacks.");
     }
 });
 ```
