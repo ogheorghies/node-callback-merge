@@ -25,8 +25,8 @@ export declare class CallbackMerger {
         merger: (items: any[][]) => any;
         voter: (callbackMerger: CallbackMerger) => boolean;
     });
-    readonly callback: (...arg: any[]) => any;
-    protected accept(arg: any[]): any;
-    merge(): void;
-    protected maybeMerge(): void;
+    readonly callback: (...arg: any[]) => void;
+    protected readonly accept: (arg: any[]) => void;
+    readonly merge: () => void;
+    protected readonly maybeMerge: () => void;
 }

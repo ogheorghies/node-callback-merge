@@ -61,24 +61,24 @@ export class CallbackMerger {
         }) {
     };
 
-    public readonly callback: (...arg: any[]) => any = function (...arg: any[]) : any {
+    public readonly callback = (...arg: any[]) => {
         this.accept(arg);
     };
 
-    protected accept(arg: any[]): any {
+    protected readonly accept = (arg: any[]) => {
         this.items.push(arg);
 
         this.maybeMerge();
-    }
+    };
 
-    public merge() {
+    public readonly merge = () => {
         this.config.merger(this.items);
         this.items.length = 0;
-    }
+    };
 
-    protected maybeMerge() {
+    protected readonly maybeMerge = () => {
         if (this.config.voter(this)) {
             this.merge();
         }
-    }
+    };
 }

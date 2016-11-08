@@ -10,4 +10,17 @@ var ms = new CallbackMerger({
 });
 ```
 
-Working example projects are available in the `examples` directory.
+In the following example, the development server is restarted (once), 120ms after all the typescript files have been
+compiled.
+```
+var reloadServer = new cm.CallbackMerger({
+    voter: cm.VoterByDelay.of(120),
+    merger: function(argsArray) {
+        console.log("Changed files: ", JSON.stringify(argsArray));
+        devServer.changed();
+    }
+});
+gulp.watch( backendFiles ).on( 'change', reloadServer.callback );
+```
+
+Other working example projects are available in the `examples` directory.

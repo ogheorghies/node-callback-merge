@@ -50,6 +50,7 @@ var VoterByDelay = (function () {
 exports.VoterByDelay = VoterByDelay;
 var CallbackMerger = (function () {
     function CallbackMerger(config) {
+        var _this = this;
         this.config = config;
         this.items = [];
         this.callback = function () {
@@ -57,23 +58,23 @@ var CallbackMerger = (function () {
             for (var _i = 0; _i < arguments.length; _i++) {
                 arg[_i - 0] = arguments[_i];
             }
-            this.accept(arg);
+            _this.accept(arg);
+        };
+        this.accept = function (arg) {
+            _this.items.push(arg);
+            _this.maybeMerge();
+        };
+        this.merge = function () {
+            _this.config.merger(_this.items);
+            _this.items.length = 0;
+        };
+        this.maybeMerge = function () {
+            if (_this.config.voter(_this)) {
+                _this.merge();
+            }
         };
     }
     ;
-    CallbackMerger.prototype.accept = function (arg) {
-        this.items.push(arg);
-        this.maybeMerge();
-    };
-    CallbackMerger.prototype.merge = function () {
-        this.config.merger(this.items);
-        this.items.length = 0;
-    };
-    CallbackMerger.prototype.maybeMerge = function () {
-        if (this.config.voter(this)) {
-            this.merge();
-        }
-    };
     return CallbackMerger;
 }());
 exports.CallbackMerger = CallbackMerger;
