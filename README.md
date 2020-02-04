@@ -1,3 +1,5 @@
+You may want to use: https://rxjs-dev.firebaseapp.com/api/operators/debounce
+
 Merges a series of callbacks (e.g. in quick succession) into rarer callbacks (taking an array of arguments).
 
 ```
